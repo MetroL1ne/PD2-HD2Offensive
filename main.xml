@@ -1,5 +1,5 @@
 <table name="HD2 Offensive" priority="-100">
-	<AssetUpdates id="52692" provider="modworkshop" use_local_dir="true" version="3"/>
+	<AssetUpdates id="52692" provider="modworkshop" use_local_dir="true" version="3.1"/>
 
 	<Localization default="english.txt" directory="loc">
 		<loc file="english.txt" language="english"/>	
@@ -71,3 +71,4 @@
 		<hook file="LuaNetwork.lua" source_file="lib/managers/menumanager"/>
 	</Hooks>
 </table>
+
