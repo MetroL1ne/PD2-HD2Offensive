@@ -3,6 +3,7 @@
 
 	<Localization default="english.txt" directory="loc">
 		<loc file="english.txt" language="english"/>	
+		<loc file="schinese.json" language="schinese"/>
 	</Localization>
 
 	<AddFiles directory="assets">
