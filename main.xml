@@ -1,9 +1,9 @@
 <table name="HD2 Offensive" priority="-100">
-	<AssetUpdates id="52692" provider="modworkshop" use_local_dir="true" version="3.1"/>
+	<AssetUpdates id="52692" provider="modworkshop" use_local_dir="true" version="4"/>
 
 	<Localization default="english.txt" directory="loc">
 		<loc file="english.txt" language="english"/>	
-		<loc file="schinese.json" language="schinese"/>
+		<loc file="schinese.txt" language="schinese"/>
 	</Localization>
 
 	<AddFiles directory="assets">
@@ -69,6 +69,6 @@
 		<hook file="hd2offensive.lua" source_file="lib/units/weapons/projectiles/projectilebase"/>
 		<hook file="hd2offensivegrenade.lua" source_file="lib/units/weapons/projectiles/arrowbase"/>
 		<hook file="LuaNetwork.lua" source_file="lib/managers/menumanager"/>
+		<hook file="blackmarketgui.lua" source_file="lib/managers/menu/blackmarketgui"/>
 	</Hooks>
 </table>
-
