@@ -83,7 +83,7 @@ function HD2Offensive:throw(data)
 	---[[ spawn hud
 	local data = {
 		name_id = name_id,
-		id = "HD2OffensiveHUD" .. tostring(effect_id or math.random()),
+		id = "HD2OffensiveHUD" .. tostring(base_to_pos) .. tostring(TimerManager:main():time()),
 		position = base_to_pos,
 		time = delay,
 		duration = timer,
@@ -229,7 +229,8 @@ end
 HD2OffensiveHUD = HD2OffensiveHUD or class()
 
 function HD2OffensiveHUD:init(data)
-	self._id = tostring(data.id)
+	-- self._id = tostring(data.id)
+	self._id = "HD2OffensiveHUD" .. tostring(data.position) .. tostring(TimerManager:main():time())
 	self._position = data.position
 	self._left_time = data.time
 	self._duration = data.duration
@@ -407,4 +408,3 @@ function HD2OffensiveHUD:destroy()
 	local hud_panel = hud.panel
 	hud_panel:remove(self._panel)
 end
-
