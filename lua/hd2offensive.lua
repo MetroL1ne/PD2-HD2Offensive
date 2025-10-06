@@ -83,7 +83,7 @@ function HD2Offensive:throw(data)
 	---[[ spawn hud
 	local data = {
 		name_id = name_id,
-		id = "HD2OffensiveHUD" .. tostring(base_to_pos) .. tostring(TimerManager:main():time()),
+		id = "HD2oHUD" .. tostring(math.random()),
 		position = base_to_pos,
 		time = delay,
 		duration = timer,
@@ -408,3 +408,4 @@ function HD2OffensiveHUD:destroy()
 	local hud_panel = hud.panel
 	hud_panel:remove(self._panel)
 end
+
