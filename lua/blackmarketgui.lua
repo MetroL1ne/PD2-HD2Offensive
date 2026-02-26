@@ -4,7 +4,7 @@ Hooks:PostHook(BlackMarketGui, "update_info_text", "hd2offensive_BMG_uit_set_tex
 
 	if identifier == self.identifiers.grenade then
 		local text_panel = self._info_texts[4]
-		local start_find = "%${"
+		local start_find = "%$hd2o{"
 		local end_find = "}"
 		local color_ranges = {}
 		local search_pos = 1
