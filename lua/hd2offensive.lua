@@ -38,9 +38,6 @@ data: {
 HD2Offensive = HD2Offensive or {}
 
 function HD2Offensive:throw(data)
-	-- self._units = self._units or {}
-	-- self._units[#self._units + 1] = {}
-	-- local units = self._units[#self._units]
 	local projectile_id = data.projectile_id or "rocket_ray_frag"
 	local base_to_pos = data.position or Vector3()
 	local rot = data.rotation or Vector3()
@@ -66,25 +63,11 @@ function HD2Offensive:throw(data)
 
 	local position_fix = data.position_fix and Vector3(0, 0, data.position_fix) or Vector3(0, 0, 0)
 
-	---[[ spawn red trail effect
-	local data = {
-		position = base_to_pos,
-		timer = kill_assets_delay,
-		x = mvector3.x(base_to_pos),
-		y = mvector3.y(base_to_pos),
-		z = mvector3.z(base_to_pos)
-	}
-
-	local effect_id = HD2OffensiveRedTrail:spawn(data)
-
-	LuaNetworking:SendToPeers("sync_hd2offensive_red_trail", json.encode(data))
-	--]]
-
-	---[[ spawn hud
+	---[[ sync_hd2offensive_throw
 	local data = {
 		name_id = name_id,
-		id = "HD2oHUD" .. tostring(math.random()),
 		position = base_to_pos,
+		timer = kill_assets_delay,
 		time = delay,
 		duration = timer,
 		progress = type == "orbital",
@@ -93,9 +76,10 @@ function HD2Offensive:throw(data)
 		z = mvector3.z(base_to_pos)
 	}
 
+	HD2OffensiveRedTrail:spawn(data)
 	HD2OffensiveHUD:new(data)
 
-	LuaNetworking:SendToPeers("sync_hd2offensive_hud", json.encode(data))
+	LuaNetworking:SendToPeers("sync_hd2offensive_throw", json.encode(data))
 	--]]
 
 	local base_from_pos = (base_to_pos + (rot:x() * ray_angle_x) + (rot:y() * ray_angle_y)) + Vector3(0, 0, base_height)
@@ -188,7 +172,6 @@ function HD2Offensive:throw(data)
 				else
 					local local_peer_id = managers.network:session():local_peer():id()
 					local unit = ProjectileBase.throw_projectile(projectile_id, from_pos, mvec_spread_direction, local_peer_id)
-					-- units[#units + 1] = unit
 				end
 			end
 		end)
@@ -200,7 +183,6 @@ function HD2Offensive:throw(data)
 			managers.network:session():send_to_peers("remove_unit", unit)
 		end
 	end)
-	-- return units
 end
 
 HD2OffensiveRedTrail = HD2OffensiveRedTrail or {}
@@ -230,7 +212,7 @@ HD2OffensiveHUD = HD2OffensiveHUD or class()
 
 function HD2OffensiveHUD:init(data)
 	-- self._id = tostring(data.id)
-	self._id = "HD2OffensiveHUD" .. tostring(data.position) .. tostring(TimerManager:main():time())
+	self._id = "HD2oHUD" .. tostring(data.position) .. tostring(TimerManager:main():time())
 	self._position = data.position
 	self._left_time = data.time
 	self._duration = data.duration

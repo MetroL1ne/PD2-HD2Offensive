@@ -5,14 +5,14 @@
 	"hud_hd2offensive_ongoing" : "Ongoing",
 
 	"bm_wpn_prj_hd2offensive_eagle_airstrike" : "Eagle Airstrike",
-	"bm_wpn_prj_hd2offensive_eagle_airstrike_desc" : "A barrage of bombs creating a non-targeted carpet of explosions.\n\nWhen called, the strike will be perpendicular from the direction you were facing when thrown.\n\nCall-in Time: ${offensive.delay}\nUses: Unlimited\nCooldown: ${base_cooldown}",
+	"bm_wpn_prj_hd2offensive_eagle_airstrike_desc" : "A barrage of bombs creating a non-targeted carpet of explosions.\n\nWhen called, the strike will be perpendicular from the direction you were facing when thrown.\n\nCall-in Time: $hd2o{offensive.delay}\nUses: Unlimited\nCooldown: $hd2o{base_cooldown}",
 
 	"bm_wpn_prj_hd2offensive_orbital_120mm" : "Orbital 120mm HE Barrage",
-	"bm_wpn_prj_hd2offensive_orbital_120mm_desc" : "A precision artillery salvo over a small area, perfect for taking out concentrated enemy units.\n\nCall-in Time: ${offensive.delay}\nUses: Unlimited\nCooldown: ${base_cooldown}",
+	"bm_wpn_prj_hd2offensive_orbital_120mm_desc" : "A precision artillery salvo over a small area, perfect for taking out concentrated enemy units.\n\nCall-in Time: $hd2o{offensive.delay}\nUses: Unlimited\nCooldown: $hd2o{base_cooldown}",
 
 	"bm_wpn_prj_hd2offensive_orbital_precision" : "Orbital Precision Strike",
-	"bm_wpn_prj_hd2offensive_orbital_precision_desc" : "A single precise shot from the Destroyer's 'ATLAS' cannon.\n\nCall-in Time: ${offensive.delay}\nUses: Unlimited\nCooldown: ${base_cooldown}",
+	"bm_wpn_prj_hd2offensive_orbital_precision_desc" : "A single precise shot from the Destroyer's 'ATLAS' cannon.\n\nCall-in Time: $hd2o{offensive.delay}\nUses: Unlimited\nCooldown: $hd2o{base_cooldown}",
 
 	"bm_wpn_prj_hd2offensive_orbital_gas" : "Orbital Gas Strike",
-	"bm_wpn_prj_hd2offensive_orbital_gas_desc" : "A projectile which releases a cloud of corrosive gas, harmful to both organic and robotic lifeforms.\n\nCall-in Time: ${offensive.delay}\nUses: Unlimited\nCooldown: ${base_cooldown}"
+	"bm_wpn_prj_hd2offensive_orbital_gas_desc" : "A projectile which releases a cloud of corrosive gas, harmful to both organic and robotic lifeforms.\n\nCall-in Time: $hd2o{offensive.delay}\nUses: Unlimited\nCooldown: $hd2o{base_cooldown}"
 }
